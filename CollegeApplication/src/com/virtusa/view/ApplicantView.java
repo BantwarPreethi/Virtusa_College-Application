@@ -16,7 +16,7 @@ public class ApplicantView
 		
 		System.out.print("Last Name: ");
 		String lastName = scanner.next();
-		
+		 
 		System.out.print("Email: ");
 		String email = scanner.next();
 		

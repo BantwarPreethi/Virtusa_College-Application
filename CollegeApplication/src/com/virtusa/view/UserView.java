@@ -7,7 +7,7 @@ import com.virtusa.model.ApplicantModel;
 
 public class UserView
 {
-	public static void mainMenu() {
+	public static void mainMenu() { 
 		System.out.println("Welcome!");
 		System.out.println("1. College Details");
 		System.out.println("2. Admissions");
@@ -17,7 +17,7 @@ public class UserView
 		System.out.println("Enter option: ");
 		Scanner scanner = new Scanner(System.in);
 		int option = scanner.nextInt();
-		UserView userView = new UserView();
+		UserView userView = new UserView(); 
 		
 		switch(option) {
 		case 1: 

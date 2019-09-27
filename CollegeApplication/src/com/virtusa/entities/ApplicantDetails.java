@@ -7,4 +7,4 @@ public class ApplicantDetails {
 	private String phoneNumber;
 	private String email;
 	
-}
+} 

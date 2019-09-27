@@ -23,7 +23,7 @@ public class ApplicantController {
 		}else{
 			
 			applicantView.applicationUnsuccess();
-	}
+	 }
 	}
 
 }
