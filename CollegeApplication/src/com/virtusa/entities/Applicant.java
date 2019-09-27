@@ -13,7 +13,8 @@ public class Applicant extends User {
 	}
 
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return "Applicant [applicantNumber=" + applicantNumber + "]";
 	}
 

@@ -29,7 +29,8 @@ public class User {
 	public String getEmailAddress() {
 		return emailAddress;
 	}
-	public String getPhoneNumber() {
+	public String getPhoneNumber() 
+	{
 		return phoneNumber;
 	}
 	public void setUserName(String userName) {

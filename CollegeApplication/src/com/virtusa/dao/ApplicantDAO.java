@@ -1,6 +1,7 @@
 package com.virtusa.dao;
 
-public interface ApplicantDAO {
+public interface ApplicantDAO 
+{
 
 	
 }

@@ -5,7 +5,8 @@ import java.util.List;
 import com.virtusa.model.ApplicantModel;
 
 
-public interface ApplicantService {
+public interface ApplicantService 
+{
 
 	public boolean storeApplicantService(ApplicantModel applicantModel);
 	public List<ApplicantModel> retrieveApplicantService();

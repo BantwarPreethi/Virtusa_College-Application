@@ -11,6 +11,6 @@ public class UserClient {
 	public static void main(String[] args) {
 		UserView userView=new UserView();
 		userView.mainMenu();
-	}
+}
 
 }

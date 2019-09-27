@@ -6,7 +6,8 @@ import com.virtusa.service.ApplicantService;
 import com.virtusa.service.ApplicantServiceImpl;
 
 public class FactoryApplicantService {
-	public static ApplicantDAO createApplicantDAO() {
+	public static ApplicantDAO createApplicantDAO()
+	{
 		ApplicantDAO userDAO=new ApplicantDAOImpl();
 		return userDAO;
 	}

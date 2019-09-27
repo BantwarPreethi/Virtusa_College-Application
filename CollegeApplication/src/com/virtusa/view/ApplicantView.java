@@ -5,7 +5,8 @@ import java.util.Scanner;
 import com.virtusa.controller.ApplicantController;
 import com.virtusa.model.ApplicantModel;
 
-public class ApplicantView {
+public class ApplicantView
+{
 
 	public void applicationForm() {
 		Scanner scanner=new Scanner(System.in);

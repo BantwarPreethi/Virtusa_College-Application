@@ -5,7 +5,8 @@ import java.util.Scanner;
 import com.virtusa.controller.ApplicantController;
 import com.virtusa.model.ApplicantModel;
 
-public class UserView {
+public class UserView
+{
 	public static void mainMenu() {
 		System.out.println("Welcome!");
 		System.out.println("1. College Details");

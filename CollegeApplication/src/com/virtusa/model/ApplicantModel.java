@@ -12,7 +12,8 @@ public class ApplicantModel {
 	private String courseName;
 	private String departmentName;
 	
-	public String getFirstName() {
+	public String getFirstName()
+	{
 		return firstName;
 	}
 	public String getLastName() {

@@ -5,7 +5,8 @@ import java.util.List;
 import com.virtusa.entities.Applicant;
 import com.virtusa.model.ApplicantModel;
 
-public class ApplicantServiceImpl implements ApplicantService {
+public class ApplicantServiceImpl implements ApplicantService
+{
 
 	@Override
 	public boolean storeApplicantService(ApplicantModel applicantModel) {
