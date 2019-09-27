@@ -1,5 +1,7 @@
 package com.virtusa.client;
 
+import com.virtusa.view.UserView;
+
 public class UserClient {
 
 	public UserClient() {
@@ -7,8 +9,8 @@ public class UserClient {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		UserView userView=new UserView();
+		userView.mainMenu();
 	}
 
 }
