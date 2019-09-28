@@ -8,7 +8,7 @@ import com.virtusa.model.ApplicantModel;
 public class UserView
 {
 	public static void mainMenu() { 
-		System.out.println("Welcome!");
+		System.out.println("			**********Welcome!**********		");
 		System.out.println("1. College Details");
 		System.out.println("2. Admissions");
 		System.out.println("3. Login");
@@ -27,8 +27,12 @@ public class UserView
 		case 2:
 			ApplicantView applicantView = new ApplicantView();
 			applicantView.applicationForm();
+			break;
 			
 		}
+		
+		userView.mainMenu();
+		
 	}
 	
 	public void displayCollegeDetails() {

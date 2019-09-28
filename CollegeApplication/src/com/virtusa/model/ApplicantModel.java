@@ -11,6 +11,7 @@ public class ApplicantModel {
 	private double interPercentage;
 	private String courseName;
 	private String departmentName;
+	private String dateOfBirth;
 	
 	public String getFirstName()
 	{
@@ -39,6 +40,13 @@ public class ApplicantModel {
 	}
 	public int getApplicantNumber() {
 		return applicantNumber;
+	}
+	
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 	public void setApplicantNumber(int applicantNumber) {
 		this.applicantNumber = applicantNumber;

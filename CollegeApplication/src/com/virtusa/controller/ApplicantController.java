@@ -18,12 +18,10 @@ public class ApplicantController {
 		
 		boolean result = applicantService.storeApplicantService(applicantModel);
 		ApplicantView applicantView=new ApplicantView();
-		if(result){
+		if(result)
 			applicantView.applicationSuccess();
-		}else{
-			
+		else
 			applicantView.applicationUnsuccess();
-	 }
 	}
 
 }
