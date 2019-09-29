@@ -7,7 +7,7 @@ public interface AdminService
 	public void deleteStudentService();
 	public void addFacultyService();
 	public void deleteFacultyService();
-	
+	 
 	
 
 }

@@ -29,7 +29,7 @@ public class AdminServiceImpl implements AdminService
 			System.out.println("Applicant not eligible");
 		}
 	}
-
+ 
 	@Override
 	public void addStudentService()
 	{

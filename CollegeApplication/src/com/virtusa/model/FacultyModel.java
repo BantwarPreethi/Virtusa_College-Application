@@ -20,6 +20,6 @@ public class FacultyModel extends ApplicantModel
 	{
 		this.salary = salary;
 	}
-	
+	 
 
 }

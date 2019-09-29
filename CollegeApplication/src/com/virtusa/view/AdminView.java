@@ -27,7 +27,7 @@ public class AdminView
 		switch(choice)
 		{
 		
-		case 1 :approveApplicant(); 
+		case 1 :approveApplicant();  
 				 	break;
 				
 		case 2 : manageStudents();
