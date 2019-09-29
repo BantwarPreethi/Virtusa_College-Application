@@ -15,10 +15,17 @@ public class Student extends User
 	}
 
 	@Override
-	public String toString() 
-	{
-		return "Student [studentId=" + studentId + "]";
+	public String toString() {
+		return "Student [studentId=" + studentId + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", dateOfBirth=" + dateOfBirth + ", emailAddress=" + emailAddress + ", phoneNumber=" + phoneNumber
+				+ ", getStudentId()=" + getStudentId() + ", getUserName()=" + getUserName() + ", getPassword()="
+				+ getPassword() + ", getFirstName()=" + getFirstName() + ", getLastName()=" + getLastName()
+				+ ", getDateOfBirth()=" + getDateOfBirth() + ", getEmailAddress()=" + getEmailAddress()
+				+ ", getPhoneNumber()=" + getPhoneNumber() + ", toString()=" + super.toString() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + "]";
 	}
+
+	
 	
 	
 

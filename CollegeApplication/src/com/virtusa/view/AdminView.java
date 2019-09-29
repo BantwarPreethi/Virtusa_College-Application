@@ -21,7 +21,7 @@ public class AdminView
 		System.out.println("7.View Students");
 		System.out.println("8.View Faculty");
 		System.out.println("9.LogOut\n");
-		System.out.println("Enter you choice");
+		System.out.println("Enter your choice");
 		int choice= scan.nextInt();
 		
 		switch(choice)
