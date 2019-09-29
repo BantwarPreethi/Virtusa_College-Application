@@ -8,7 +8,19 @@ public class AdminController
 		 
 	}
 	
-	public void addStudent()
+	public void addStudentController()
+	{
+		
+	}
+	public void deleteStudentController()
+	{
+		
+	}
+	public void addFacultyController()
+	{
+		
+	}
+	public void deleteFacultyController()
 	{
 		
 	}

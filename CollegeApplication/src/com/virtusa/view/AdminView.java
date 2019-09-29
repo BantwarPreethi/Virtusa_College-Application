@@ -33,7 +33,7 @@ public class AdminView
 		case 2 : manageStudents();
 					break;
 		
-		case 3 : 
+		case 3 : manageFaculty();
 					break;
 			
 		case 4 :
@@ -79,19 +79,37 @@ public class AdminView
 			System.out.println("3. Update Student Details");
 		
 			int choice = scan.nextInt();
-			
+			AdminController adminController = new AdminController();
 			switch(choice)
 			{
-			case 1 :AdminController adminController = new AdminController();
-					adminController.addStudent();
+			case 1 :adminController.addStudentController();
 					break;
-			case 2 : 
+			case 2 :adminController.deleteStudentController();
 					break;
 			case 3 :
 					break;
 				
 			}
 			
+			
+		}
+		public void manageFaculty()
+		{
+			System.out.println("1.Add Faculty");
+			System.out.println("2.Delete Faculty");
+			System.out.println("3.Update Faculty Details");
+			int choice = scan.nextInt();
+			AdminController adminController = new AdminController();
+			switch(choice)
+			{
+			case 1 : adminController.addFacultyController();
+					break;
+			case 2 : adminController.deleteFacultyController();
+					break;
+			case 3 :
+					break;
+				
+			}
 			
 		}
 		
