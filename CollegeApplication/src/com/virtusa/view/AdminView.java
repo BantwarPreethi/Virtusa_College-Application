@@ -2,12 +2,16 @@ package com.virtusa.view;
 
 import java.util.Scanner;
 
+import com.virtusa.controller.AdminController;
+import com.virtusa.dao.ApplicantDAOImpl;
+
 public class AdminView 
 {
+	Scanner scan = new Scanner(System.in);
 	public void adminView()
 	{
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Admin LogIn is Successful");
+		
+		System.out.println("Admin LogIn is Successful\n\n");
 		System.out.println("1.Approve Applicant");
 		System.out.println("2.Manage Students");
 		System.out.println("3.Manage Faculty");
@@ -16,17 +20,17 @@ public class AdminView
 		System.out.println("6.Manage Placements");
 		System.out.println("7.View Students");
 		System.out.println("8.View Faculty");
-		System.out.println("9.LogOut");
+		System.out.println("9.LogOut\n");
 		System.out.println("Enter you choice");
 		int choice= scan.nextInt();
 		
 		switch(choice)
 		{
 		
-		case 1 : 
+		case 1 :approveApplicant(); 
 				 	break;
 				
-		case 2 :
+		case 2 : manageStudents();
 					break;
 		
 		case 3 : 
@@ -50,18 +54,60 @@ public class AdminView
 		case 9 :
 					break;
 			
-			
-			
-			
-			
-			
+				
 		
+		}
+	}
+
+		public void approveApplicant() 
+		{
+			/*
+			 * 1.either controller or data retrieve as model + validation
+			 * 2.retrieve model from method in any service
+			 * 
+			 */
+		
+		AdminController adminController = new AdminController();
+		adminController.approveApplicantController();
 		
 		}
 		
+		public void manageStudents()
+		{
+			System.out.println("1. Add Student");
+			System.out.println("2. Delete Student");
+			System.out.println("3. Update Student Details");
 		
+			int choice = scan.nextInt();
+			
+			switch(choice)
+			{
+			case 1 :AdminController adminController = new AdminController();
+					adminController.addStudent();
+					break;
+			case 2 : 
+					break;
+			case 3 :
+					break;
+				
+			}
+			
+			
+		}
 		
-		
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

@@ -1,5 +1,6 @@
 package com.virtusa.dao;
 
-public class AdminDAO {
+public interface AdminDAO 
+{
 
 }

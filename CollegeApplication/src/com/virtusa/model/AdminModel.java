@@ -1,5 +1,7 @@
 package com.virtusa.model;
 
-public class AdminModel {
+public class AdminModel 
+{
+	
 
 }

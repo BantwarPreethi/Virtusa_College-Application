@@ -1,5 +1,9 @@
 package com.virtusa.service;
 
-public class AdminService {
+public interface AdminService 
+{
+	public void approveApplicantService();
+	public void addStudentService();
+	
 
 }
