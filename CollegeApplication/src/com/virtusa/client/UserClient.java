@@ -13,5 +13,4 @@ public class UserClient {
 		UserView userView=new UserView();
 		userView.mainMenu(); 
 }
-
 }

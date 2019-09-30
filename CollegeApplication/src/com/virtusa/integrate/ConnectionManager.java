@@ -8,16 +8,18 @@ public class ConnectionManager {
 	
 	private static DataSource dataSource=new DataSource();
 	
-	private  static Connection connection=null;
+	private static Connection connection=null;
 	public static Connection openConnection() 
-	throws ClassNotFoundException,SQLException {
-		//System.out.println(dataSource.getDriver());
-		//Class.forName(dataSource.getDriver());
+			throws ClassNotFoundException,SQLException {
+		
+		Class.forName(dataSource.getDriver());
 		connection=DriverManager.getConnection(dataSource.getUrl(),dataSource.getUsername(),dataSource.getPassword());
 		return connection;
+		
 	}
 	
 	public static void closeConnection() throws SQLException{
+		
 		connection.close();
 	}
 }

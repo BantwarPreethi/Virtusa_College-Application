@@ -22,6 +22,7 @@ public class ApplicantServiceImpl implements ApplicantService
 		applicant.setFirstName(applicantModel.getFirstName());
 		applicant.setLastName(applicantModel.getLastName());
 		applicant.setEmailAddress(applicantModel.getEmail());
+		applicant.setAadharNumber(applicantModel.getAadharNumber());
 		applicant.setPhoneNumber(applicantModel.getPhoneNumber());
 		applicant.setDateOfBirth(applicantModel.getDateOfBirth());
 		applicant.setTenthPercentage(applicantModel.getTenthPercentage());
@@ -47,6 +48,7 @@ public class ApplicantServiceImpl implements ApplicantService
 				applicantModel.setFirstName(applicant.getFirstName());
 				applicantModel.setLastName(applicant.getLastName());
 				applicantModel.setDateOfBirth(applicant.getDateOfBirth());
+				applicantModel.setAadharNumber(applicant.getAadharNumber());
 				applicantModel.setPhoneNumber(applicant.getPhoneNumber());
 				applicantModel.setEmail(applicant.getEmailAddress());
 				applicantModel.setTenthPercentage(applicant.getTenthPercentage());

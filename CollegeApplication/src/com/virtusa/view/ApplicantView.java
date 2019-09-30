@@ -29,6 +29,9 @@ public class ApplicantView
 		System.out.println("Inter Percentage: ");
 		double interPercentage = scanner.nextDouble();
 		
+		System.out.println("Enter Aadhar Number: ");
+		String aadharNumber = scanner.next();
+		
 		System.out.print("Course Name: ");
 		String courseName=scanner.next();
 		
@@ -43,6 +46,7 @@ public class ApplicantView
 		applicantModel.setPhoneNumber(phoneNumber);
 		applicantModel.setTenthPercentage(tenthPercentage);
 		applicantModel.setInterPercentage(interPercentage);
+		applicantModel.setAadharNumber(aadharNumber);
 		applicantModel.setCourseName(courseName);
 		applicantModel.setDepartmentName(departmentName);
 		
