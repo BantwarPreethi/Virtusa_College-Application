@@ -11,6 +11,11 @@ public class FactoryStudentDAO {
 		return studentService;
 	}
 
+	public static StudentService createStudentService() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 }

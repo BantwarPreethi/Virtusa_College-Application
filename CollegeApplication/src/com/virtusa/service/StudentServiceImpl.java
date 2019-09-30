@@ -8,7 +8,7 @@ import com.virtusa.model.StudentModel1;
 public class StudentServiceImpl implements StudentService {
 	private StudentDAO studentDAO;
 	public StudentServiceImpl() {
-		this.studentDAO=FactoryStudentDAO.createStudentDAO();
+		//this.studentDAO=FactoryStudentDAO.createStudentDAO();
 	}
 	
 
