@@ -7,7 +7,7 @@ import com.virtusa.model.AlumniModel;
 import com.virtusa.service.AlumniService;
 import com.virtusa.view.AlumniView;
 
-public class AlumniController {
+public class AlumniController { 
 
 	
 		private AlumniService alumniService;

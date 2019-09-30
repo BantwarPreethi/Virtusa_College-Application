@@ -8,7 +8,7 @@ import com.virtusa.model.AlumniModel;
 
 public class AlumniView {
 public void mainMenu(){
-		
+		  
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("1. Alumni Registraion");
 		System.out.println("2. View Alumni Details ");

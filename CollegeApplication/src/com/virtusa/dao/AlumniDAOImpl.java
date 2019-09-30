@@ -5,7 +5,7 @@ import java.util.List;
 import com.virtusa.entities.Alumni;
 
 public class AlumniDAOImpl implements AlumniDAO {
-	
+	  
 
 	@Override
 	public List<Alumni> viewAlumni() {

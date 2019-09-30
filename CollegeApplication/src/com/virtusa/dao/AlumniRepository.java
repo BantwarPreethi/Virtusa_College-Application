@@ -3,7 +3,7 @@ package com.virtusa.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.virtusa.entities.Alumni;
+import com.virtusa.entities.Alumni;  
 
 public class AlumniRepository {
 	

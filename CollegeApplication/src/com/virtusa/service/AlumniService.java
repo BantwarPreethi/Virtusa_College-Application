@@ -10,5 +10,5 @@ public interface AlumniService {
 	public boolean storeAlumniService(AlumniModel alumnimodel);
 	public List<AlumniModel> retrieveAlumniService();
 
-
+  
 }

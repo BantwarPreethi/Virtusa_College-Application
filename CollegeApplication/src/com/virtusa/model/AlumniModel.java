@@ -13,7 +13,7 @@ public class AlumniModel {
 	private String presentStatus;
 	private String yearOfCompletition;
 	
-	
+	 
 	
 	
 
