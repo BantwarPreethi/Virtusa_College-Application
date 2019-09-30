@@ -10,7 +10,7 @@ public class AdminView
 	Scanner scan = new Scanner(System.in);
 	public void adminView()
 	{
-		
+		System.out.println("\t\t =====ADMIN VIEW=====");
 		System.out.println("Admin LogIn is Successful\n\n");
 		System.out.println("1.Approve Applicant");
 		System.out.println("2.Manage Students");

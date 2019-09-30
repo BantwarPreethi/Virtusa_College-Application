@@ -2,6 +2,8 @@ package com.virtusa.view;
 
 import java.util.Scanner;
 
+import com.virtusa.controller.StudentController;
+
 public class StudentView {
 	
 	Scanner sc=new Scanner(System.in);
@@ -19,17 +21,17 @@ public class StudentView {
 		
 		switch(choice) {
 		
-		case 1:
+		case 1:viewClassSchedule();
 			break;
-		case 2:
+		case 2:viewExaminationSchedule();
 			break;
-		case 3:
+		case 3:viewResults();
 			break;
-		case 4:
+		case 4:viewAssignments();
 			break;
-		case 5:
+		case 5:viewPlacementCalender();
 			break;
-		case 6:
+		case 6:viewGeneralExams();
 			break;
 		case 7:System.exit(0);
 			break;
@@ -38,5 +40,32 @@ public class StudentView {
 		
 		}
 	}
+	
+	public void viewClassSchedule() {
+		StudentController studentController =new StudentController();
+		studentController.retrieveClassSchedule();
+	}
+	
+	public void viewExaminationSchedule() {
+		StudentController studentController =new StudentController();
+		studentController.retrieveExaminationSchedule();
+	}
+	
 
+	public void viewResults() {
+		StudentController studentController =new StudentController();
+		studentController.retrieveResults();
+	}
+	public void viewAssignments() {
+		StudentController studentController =new StudentController();
+		studentController.retrieveAssignments();
+	}
+	public void viewPlacementCalender() {
+		StudentController studentController =new StudentController();
+		studentController.retrievePlacementCalender();
+	}
+	public void viewGeneralExams() {
+		StudentController studentController =new StudentController();
+		studentController.retrieveGeneralExams();
+	}
 }
