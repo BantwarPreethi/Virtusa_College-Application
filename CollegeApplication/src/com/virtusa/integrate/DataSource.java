@@ -3,7 +3,6 @@ package com.virtusa.integrate;
 import java.util.ResourceBundle;
 
 public class DataSource {
-	//any value we retrieve from the properties file should be a string
 	private String driver;
 	private String url;
 	private String username;
@@ -51,7 +50,6 @@ public class DataSource {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	}
 
 

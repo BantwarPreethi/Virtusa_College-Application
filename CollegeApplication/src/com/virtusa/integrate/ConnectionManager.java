@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
 	
-	private static DataSource dataSource=new DataSource();
+private static DataSource dataSource=new DataSource();
 	
 	private static Connection connection=null;
 	public static Connection openConnection() 
@@ -22,6 +22,7 @@ public class ConnectionManager {
 		
 		connection.close();
 	}
+
 }
 
 
