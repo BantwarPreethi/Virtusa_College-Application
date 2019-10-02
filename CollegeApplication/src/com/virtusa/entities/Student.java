@@ -3,6 +3,10 @@ package com.virtusa.entities;
 public class Student extends User
 {
 	private int studentId;
+	private double tenthPercentage;
+	private double interPercentage;
+	private String courseName;
+	private String departmentName;
 
 	public int getStudentId() 
 	{
@@ -12,6 +16,41 @@ public class Student extends User
 	public void setStudentId(int studentId) 
 	{
 		this.studentId = studentId;
+	}
+	public double getTenthPercentage() {
+		return tenthPercentage;
+	}
+
+	public void setTenthPercentage(double tenthPercentage) {
+		this.tenthPercentage = tenthPercentage;
+	}
+
+	public double getInterPercentage() {
+		return interPercentage;
+	}
+
+	public void setInterPercentage(double interPercentage) {
+		this.interPercentage = interPercentage;
+	}
+	
+	
+	
+	
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public String getDepartmentName() {
+		return departmentName;
+	}
+
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
 
 	@Override

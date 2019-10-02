@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.virtusa.dao.ApplicantDAOImpl;
+import com.virtusa.entities.Faculty;
 import com.virtusa.entities.Student;
 import com.virtusa.model.ApplicantModel;
 import com.virtusa.model.FacultyModel;
@@ -31,27 +32,27 @@ public class AdminServiceImpl implements AdminService
 	}
  
 	@Override
-	public void addStudentService()
+	public void addStudentService(StudentModel studentModel)
 	{
-		List<StudentModel> studentList = new ArrayList<StudentModel>();
-		StudentModel studentModel = new StudentModel();
-		studentModel.getStudentId(); 
-		studentModel.getFirstName();
-		studentModel.getLastName();
-		studentModel.getPhoneNumber();
-		studentModel.getEmail();
-		studentModel.getDateOfBirth();
-		studentModel.getInterPercentage();
-		studentModel.getTenthPercentage();
-		studentModel.getCourseName();
-		studentModel.getDepartmentName();
-		studentList.add(studentModel);	
+		List<Student> studentList = new ArrayList<Student>();
+		Student student = new Student();
+		student.setStudentId(studentModel.getStudentId()); 
+		student.setFirstName(studentModel.getFirstName());
+		student.setLastName(studentModel.getLastName());
+		student.setPhoneNumber(studentModel.getPhoneNumber());
+		student.setEmailAddress(studentModel.getEmail());
+		student.setDateOfBirth(studentModel.getDateOfBirth());
+		student.setInterPercentage(studentModel.getInterPercentage());
+		student.setTenthPercentage(studentModel.getTenthPercentage());
+		student.setCourseName(studentModel.getCourseName());
+		student.setDepartmentName(studentModel.getDepartmentName());
+		
 	}
 
 	@Override
 	public void deleteStudentService() 
 	{
-		List<StudentModel> studentList = new ArrayList<StudentModel>();
+		List<Student> studentList = new ArrayList<Student>();
 		System.out.println("Enter Student Id to delete record:");
 		Scanner scanner = new Scanner(System.in);
 		int id= scanner.nextInt();
@@ -59,26 +60,25 @@ public class AdminServiceImpl implements AdminService
 	}
 
 	@Override
-	public void addFacultyService()
+	public void addFacultyService(FacultyModel facultyModel)
 	{
-		List<FacultyModel> facultyList = new ArrayList<FacultyModel>();
-		FacultyModel facultyModel = new FacultyModel();
-		facultyModel.getFacultyId();
-		facultyModel.getFirstName();
-		facultyModel.getLastName();
-		facultyModel.getPhoneNumber();
-		facultyModel.getEmail();
-		facultyModel.getDateOfBirth();
-		facultyModel.getCourseName();
-		facultyModel.getDepartmentName();
-		facultyModel.getSalary();
-		facultyList.add(facultyModel);	
+		List<Faculty> facultyList = new ArrayList<Faculty>();
+		Faculty faculty = new Faculty();
+		faculty.setFacultyId(facultyModel.getFacultyId());
+		faculty.setFirstName(facultyModel.getFirstName());
+		faculty.setLastName(facultyModel.getLastName());
+		faculty.setPhoneNumber(facultyModel.getPhoneNumber());
+		faculty.setEmailAddress(facultyModel.getEmail());
+		faculty.setDateOfBirth(facultyModel.getDateOfBirth());
+		faculty.setCourseName(facultyModel.getCourseName());
+		faculty.setDepartmentName(facultyModel.getDepartmentName());
+		faculty.setSalary(facultyModel.getSalary());
 	}
 
 	@Override
 	public void deleteFacultyService()
 	{
-		List<FacultyModel> facultyList = new ArrayList<FacultyModel>();
+		List<Faculty> facultyList = new ArrayList<Faculty>();
 		System.out.println("Enter faculty Id to delete record");
 		Scanner scanner = new Scanner(System.in);
 		int id= scanner.nextInt();
