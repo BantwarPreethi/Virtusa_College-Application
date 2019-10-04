@@ -20,9 +20,9 @@ public boolean validate(ApplicantModel model) {
 		return result;
 	}
 
-	private boolean validDouble(double Percentage) {
+	public boolean validDouble(double Percentage) {
 		boolean result = false;
-		if(Percentage>0.0 && Percentage<100.0)
+		if(Percentage>0.0 && Percentage<=100.0)
 			result=true;
 		return result;
 	}
@@ -45,10 +45,17 @@ public boolean validate(ApplicantModel model) {
 		return result;
 	}
 
-	public boolean validNumber(String Aadhar) {
+	public boolean validAadhar(String Aadhar) {
 		try {
+			int length=0;
 		int data=Integer.parseInt(Aadhar);
-		} catch (NumberFormatException | NullPointerException e) {
+		while(data!=0){
+	         data = data/10;
+	         length++;
+	      }
+		if(length!=12)
+			throw new Exception();
+		} catch (Exception e) {
 			return false;
 		}
 		return true;
@@ -64,4 +71,6 @@ public boolean validate(ApplicantModel model) {
 		String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 	    return email.matches(regex);
 	}
+	
+	
 }
