@@ -1,6 +1,11 @@
 package com.virtusa.view;
 
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 import com.virtusa.controller.ApplicantController;
 import com.virtusa.exception.ValidationException;
@@ -10,20 +15,21 @@ import com.virtusa.validation.ApplicantModelValidator;
 public class ApplicantView
 {
 
-	public void applicationForm() {
-		Scanner scanner=new Scanner(System.in);
+	public void applicationForm() throws ClassNotFoundException, SQLException {
+		
 		ApplicantModelValidator validator = new ApplicantModelValidator();
 		ApplicantView applicantView = new ApplicantView();
 		
 		System.out.println("-------Application Form-------");
+	
+		try(Scanner scanner=new Scanner(System.in);){
 		
 		System.out.print("First Name: ");
 		String firstName = scanner.next();
 		boolean validFirstName=validator.validString(firstName);
 		if(!validFirstName)
 			try {
-			throw new ValidationException("[!ERROR:Invalid First Name]");
-			
+			throw new ValidationException("[!ERROR:Invalid First Name]");	
 			}catch(ValidationException e) {
 				System.out.println(e.getMessage());
 				applicantView.applicationForm();
@@ -35,7 +41,6 @@ public class ApplicantView
 		if(!validLastName)
 			try {
 			throw new ValidationException("[!ERROR:Invalid Last Name]");
-			
 			}catch(ValidationException e) {
 				System.out.println(e.getMessage());
 				applicantView.applicationForm();
@@ -94,7 +99,29 @@ public class ApplicantView
 			}catch(ValidationException e) {
 				System.out.println(e.getMessage());
 				applicantView.applicationForm();
-			}
+			} 
+		
+		System.out.print("Date Of Birth (DD/MM/YYYY):");
+		String dateOfBirthValidate=scanner.next();
+		
+		StringTokenizer tokens=new StringTokenizer(dateOfBirthValidate,"/");
+		
+		List<String> tokensList=new ArrayList<>();
+		while(tokens.hasMoreTokens()) {
+			tokensList.add(tokens.nextToken());
+		}
+		
+		int dayOfMonth=Integer.parseInt(tokensList.get(0));
+		int month=Integer.parseInt(tokensList.get(1));
+		int year=Integer.parseInt(tokensList.get(2));
+		try {
+			LocalDate dateOfBirth=LocalDate.of(year, month, dayOfMonth);
+		}
+		catch (Exception e)
+			{
+			System.out.println(e.getMessage());
+			applicantView.applicationForm();
+		}
 		
 		System.out.print("Course Name: ");
 		String courseName=scanner.next();
@@ -116,21 +143,24 @@ public class ApplicantView
 		
 		ApplicantController applicantController = new ApplicantController();
 		applicantController.storeApplicant(applicantModel);
-		UserView userView = new UserView();
-		userView.mainMenu();
+		UserView.mainMenu();
+	}
+	catch(Exception e) {
+		System.out.println(e);
+	}
 		
 	}
 	
 	public void applicationSuccess() {
-		System.out.println("Applied successfully");
+		System.out.println("Applied successfully!");
 	}
 	
-	public void applicationUnsuccess() {
+	public void applicationUnsuccessful() {
 		System.out.println("Application unsuccessful");
 	}
 	
 	public void validationFailedError() {
-		System.out.println("Data entered not valid");
+		System.out.println("Data entered is not valid");
 		
 	}
 }

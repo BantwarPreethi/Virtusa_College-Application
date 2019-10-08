@@ -14,35 +14,33 @@ public class ApplicantDAOImpl implements ApplicantDAO
 {
 
 	@Override
-	public boolean persistApplicant(Applicant applicant) {
+	public boolean persistApplicant(Applicant applicant) throws ClassNotFoundException, SQLException  {
 		
-		try {
+		/*try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}
+		}*/
 		
-		try(
-			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","ca","ca");
-				){
-			PreparedStatement st = conn.prepareStatement("insert into application_form values(APPLICATIONSEQ.nextval,?,?,?,?,?,?,?,?)");
-			st.setString(1, applicant.getFirstName());
-			st.setString(2, applicant.getLastName());
-			st.setString(3, applicant.getEmailAddress());
-			st.setString(4, applicant.getAadharNumber());
-			st.setString(5, applicant.getDateOfBirth());
-			st.setString(6, applicant.getCourseName());
-			st.setString(7, applicant.getDepartmentName());
-			int rows = st.executeUpdate();
-			if(rows>0)
-				System.out.println("Inserted");
-			else
-				System.out.println("Not inserted");
-		}
-		catch(SQLException e) {
-			
-		}
-		return ApplicantRepository.add(applicant);
+		Connection conn=ConnectionManager.openConnection();
+		PreparedStatement preparedStatement = conn.prepareStatement("insert into application_form values(APPLICATIONSEQ.nextval,?,?,?,?,?,?,?,?,?,?)");
+		preparedStatement.setString(2, applicant.getFirstName());
+		preparedStatement.setString(3, applicant.getLastName());
+		preparedStatement.setString(4, applicant.getEmailAddress());
+		preparedStatement.setString(5, applicant.getPhoneNumber());
+		preparedStatement.setDouble(6, applicant.getTenthPercentage());
+		preparedStatement.setDouble(7, applicant.getInterPercentage());
+		preparedStatement.setString(8, applicant.getAadharNumber());
+		preparedStatement.setDate(9, applicant.getDateOfBirth());
+		preparedStatement.setString(10, applicant.getCourseName());
+		preparedStatement.setString(11, applicant.getDepartmentName());
+		int rows=preparedStatement.executeUpdate();
+		ConnectionManager.closeConnection();
+		
+		if(rows>0)
+			return true;
+		else
+			return false;
 	}
 
 	@Override

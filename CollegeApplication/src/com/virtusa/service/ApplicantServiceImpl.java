@@ -1,5 +1,6 @@
 package com.virtusa.service;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class ApplicantServiceImpl implements ApplicantService
 	}
 
 	@Override
-	public boolean storeApplicantService(ApplicantModel applicantModel) {
+	public String storeApplicantService(ApplicantModel applicantModel) {
 		Applicant applicant = new Applicant();
 		applicant.setApplicantNumber(applicantModel.getApplicantNumber());
 		applicant.setFirstName(applicantModel.getFirstName());
@@ -30,13 +31,24 @@ public class ApplicantServiceImpl implements ApplicantService
 		applicant.setCourseName(applicantModel.getCourseName());
 		applicant.setDepartmentName(applicantModel.getDepartmentName());
 		
-		return applicantDAO.persistApplicant(applicant);
+		String result = "failed";
+		try {
+			boolean stored = applicantDAO.persistApplicant(applicant);
+			if(stored)
+				result = "success";
+		}
+		catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			System.out.println("!ERROR[Registration failed due to some internal issue]");
+		}
+		
+		return result;
 	}
 
 	@Override 
-	public List<ApplicantModel> retrieveApplicantService() {
+	public List<ApplicantModel> retrieveApplicants() {
 		
-			List<Applicant> applicantList=applicantDAO.viewApplicants();
+			List<Applicant> applicantList = applicantDAO.viewApplicants();
 			
 			List<ApplicantModel> applicantModelList=new ArrayList<ApplicantModel>();
 			

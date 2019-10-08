@@ -1,5 +1,7 @@
 package com.virtusa.entities;
 
+import java.sql.Date;
+
 public class Applicant extends User {
 	
 	private int applicantNumber;
@@ -8,6 +10,8 @@ public class Applicant extends User {
 	private String courseName;
 	private String departmentName;
 	private String aadharNumber;
+	private Date dateOfBirth;
+	
 	public int getApplicantNumber() {
 		return applicantNumber;
 	}
@@ -44,11 +48,20 @@ public class Applicant extends User {
 	public void setAadharNumber(String aadharNumber) {
 		this.aadharNumber = aadharNumber;
 	}
+	
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
 	@Override
 	public String toString() {
 		return "Applicant [applicantNumber=" + applicantNumber + ", tenthPercentage=" + tenthPercentage
 				+ ", interPercentage=" + interPercentage + ", courseName=" + courseName + ", departmentName="
-				+ departmentName + ", aadharNumber=" + aadharNumber + "]";
+				+ departmentName + ", aadharNumber=" + aadharNumber + ", dateOfBirth=" + dateOfBirth + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", emailAddress=" + emailAddress + ", phoneNumber="
+				+ phoneNumber + "]";
 	}
 	
 }

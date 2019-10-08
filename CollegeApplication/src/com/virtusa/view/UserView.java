@@ -1,5 +1,6 @@
 package com.virtusa.view;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import com.virtusa.controller.ApplicantController;
@@ -14,24 +15,30 @@ public class UserView
 		System.out.println("3. Login");
 		System.out.println("4. Alumni Registration");
 		System.out.println("5. Feedback");
-		System.out.println("Enter option: ");
-		Scanner scanner = new Scanner(System.in);
-		int option = scanner.nextInt();
+		System.out.println("Enter option: ");		
 		UserView userView = new UserView(); 
 		
-		switch(option) {
-		case 1: 
-			userView.displayCollegeDetails();
-			break;
+		try(Scanner scanner = new Scanner(System.in);){
+			int option = scanner.nextInt();
+			switch(option) {
+			case 1: 
+				userView.displayCollegeDetails();
+				break;
 			
-		case 2:
-			ApplicantView applicantView = new ApplicantView();
-			applicantView.applicationForm();
-			break;
-			
+			case 2:
+				ApplicantView applicantView = new ApplicantView();
+				applicantView.applicationForm();
+				break;
+			default: 
+				System.out.println("!ERROR[Enter an appropriate option]");
+				mainMenu();
+			}
+		}
+		catch(Exception e) {
+			System.out.println("!ERROR[Enter an appropriate option]");
 		}
 		
-		userView.mainMenu();
+		mainMenu();
 		
 	}
 	

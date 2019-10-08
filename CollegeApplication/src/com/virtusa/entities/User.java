@@ -1,5 +1,7 @@
 package com.virtusa.entities;
 
+import java.sql.Date;
+
 public class User {
 
 	private String userName;
@@ -7,7 +9,7 @@ public class User {
 	
 	protected String firstName;
 	protected String lastName;
-	protected String dateOfBirth;
+	protected Date dateOfBirth;
 	protected String emailAddress;
 	protected String phoneNumber;
 	
@@ -23,7 +25,7 @@ public class User {
 	public String getLastName() {
 		return lastName;
 	}
-	public String getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 	public String getEmailAddress() {
@@ -45,7 +47,7 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	public void setEmailAddress(String emailAddress) {

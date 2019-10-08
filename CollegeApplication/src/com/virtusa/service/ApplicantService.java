@@ -1,5 +1,6 @@
 package com.virtusa.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.virtusa.model.ApplicantModel;
@@ -8,6 +9,6 @@ import com.virtusa.model.ApplicantModel;
 public interface ApplicantService 
 {
 
-	public boolean storeApplicantService(ApplicantModel applicantModel);
-	public List<ApplicantModel> retrieveApplicantService();
+	public String storeApplicantService(ApplicantModel applicantModel);
+	public List<ApplicantModel> retrieveApplicants();
 }

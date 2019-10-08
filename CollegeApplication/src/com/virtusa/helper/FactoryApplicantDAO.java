@@ -7,8 +7,8 @@ public class FactoryApplicantDAO {
 
 	public static ApplicantDAO createApplicantDAO()
 	 {
-		ApplicantDAO userDAO=new ApplicantDAOImpl();
-		return userDAO;
+		ApplicantDAO applicantDAO=new ApplicantDAOImpl();
+		return applicantDAO;
 	} 
 	
 }

@@ -1,6 +1,8 @@
 package com.virtusa.controller;
 
 
+import java.sql.SQLException;
+
 import com.virtusa.helper.FactoryApplicantService;
 import com.virtusa.model.ApplicantModel;
 import com.virtusa.service.ApplicantService;
@@ -17,29 +19,19 @@ public class ApplicantController {
 	}
 
 	public void storeApplicant(ApplicantModel applicantModel) {
+		ApplicantModelValidator applicantModelValidator = new ApplicantModelValidator();
 		
-		boolean result = applicantService.storeApplicantService(applicantModel);
-		if(result)
-			applicantView.applicationSuccess();
-		else
-			applicantView.applicationUnsuccess();
-	}
-	
-	/*public void handleApplicant(ApplicantModel model) {
-		
-		ApplicantModelValidator validator=new ApplicantModelValidator();
-				
-		if(validator.validate(model)) {
-		
-		boolean outcome=applicantService.storeApplicantService(model);
-		if(outcome==true) 
-			applicantView.applicationSuccess();	
-		else 
-			applicantView.applicationUnsuccess();
-	}
-		else 
+		if(applicantModelValidator.validate(applicantModel)) 
+		{
+			String result = applicantService.storeApplicantService(applicantModel);
+			if(result.contentEquals("success"))
+				applicantView.applicationSuccess();
+			else
+				applicantView.applicationUnsuccessful();
+		}
+		else {
 			applicantView.validationFailedError();
+		}
+	}
 	
-	}*/
-
 }

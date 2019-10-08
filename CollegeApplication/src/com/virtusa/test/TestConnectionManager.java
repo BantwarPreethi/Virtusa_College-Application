@@ -12,13 +12,16 @@ import com.virtusa.integrate.ConnectionManager;
 class TestConnectionManager {
 
 	@Test
-	void test() { 
-			try {
-				Connection connection=ConnectionManager.openConnection();
-				assertEquals(true,connection!=null);
-			} catch (ClassNotFoundException | SQLException e) {
-				assertTrue(false);
-			}
+	void testOpenConnection_positive() {
+		try {
+			Connection connection=ConnectionManager.
+					openConnection();
+			assertEquals(true,connection!=null);
+		} catch (ClassNotFoundException | SQLException e) {
+			assertTrue(false);
+		}
+	
 	}
+
 
 }

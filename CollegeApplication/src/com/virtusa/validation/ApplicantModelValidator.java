@@ -47,17 +47,18 @@ public boolean validate(ApplicantModel model) {
 
 	public boolean validAadhar(String Aadhar) {
 		try {
-			int length=0;
-		int data=Integer.parseInt(Aadhar);
-		while(data!=0){
-	         data = data/10;
-	         length++;
-	      }
-		if(length!=12)
-			throw new Exception();
-		} catch (Exception e) {
+			int length = 0;
+			long data = Long.parseLong(Aadhar);
+			while(data!=0){
+				data = data/10;
+				length++;
+			}
+			if(length!=12)
+				throw new Exception(); 
+			} 
+		catch (Exception e) {
 			return false;
-		}
+			}
 		return true;
 	}
 
