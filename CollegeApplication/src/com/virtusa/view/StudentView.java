@@ -1,13 +1,16 @@
 package com.virtusa.view;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.virtusa.controller.StudentController;
+import com.virtusa.model.ClassScheduleModel;
+import com.virtusa.model.StudentModel;
 
 public class StudentView {
 	
-	Scanner sc=new Scanner(System.in);
-	public void studentView() {
+	
+	public void studentMenu() {
 		System.out.println("\t\t =====STUDENT VIEW=====");
 		System.out.println("1.View Class Schedule");
 		System.out.println("2.View Examination Schedule");
@@ -17,6 +20,7 @@ public class StudentView {
 		System.out.println("6.General Exams");
 		System.out.println("7.Exit");
 		System.out.println("Enter your choice:");
+		try(Scanner sc=new Scanner(System.in);){
 		int choice=sc.nextInt();
 		
 		switch(choice) {
@@ -36,14 +40,32 @@ public class StudentView {
 		case 7:System.exit(0);
 			break;
 		default:System.out.println("[SELECT APPROPRIATE OPTION]");
-			studentView();
-		
+			studentMenu();
+		}
+		}catch(Exception e) {
+			System.out.println("!ERROR[SELECT APPROPRIATE OPTION]");
 		}
 	}
 	
+	//12.10.19
 	public void viewClassSchedule() {
 		StudentController studentController =new StudentController();
-		studentController.retrieveClassSchedule();
+		try(Scanner scanner=new Scanner(System.in);){
+		System.out.println("Please Enter Department Name:");
+		String departmentName=scanner.nextLine();
+		studentController.retrieveClassSchedule(departmentName);
+	}catch(Exception e) {
+		e.printStackTrace();
+	}	
+	}
+	
+	public void showClassSchedule(StudentModel students) {
+	System.out.println("=====================================================================================================================");
+	System.out.format("%10s%15s%25s%45s\n","Day","First Hour","Second Hour","Third Hour","Fourth Hour");
+	System.out.println("=====================================================================================================================");
+	System.out.format("%9s%12d%45s%30s\n",students.getClassScheduleModel().getDay(),students.getClassScheduleModel().getFirst_hour(),students.getClassScheduleModel().getSecond_hour(),students.getClassScheduleModel().getThird_hour(),students.getClassScheduleModel().getFourth_hour());
+	StudentView studentView=new StudentView();
+	studentView.studentMenu();
 	}
 	
 	public void viewExaminationSchedule() {

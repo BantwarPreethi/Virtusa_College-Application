@@ -7,7 +7,12 @@ public class Student extends User
 	private double interPercentage;
 	private String courseName;
 	private String departmentName;
-
+//12.10.19
+	private ClassSchedule classSchedule;
+	//private ExamSchedule examSchedule;
+	
+	public Student() {}
+	
 	public int getStudentId() 
 	{
 		return studentId;
@@ -34,9 +39,6 @@ public class Student extends User
 	}
 	
 	
-	
-	
-
 	public String getCourseName() {
 		return courseName;
 	}
@@ -62,6 +64,14 @@ public class Student extends User
 				+ ", getDateOfBirth()=" + getDateOfBirth() + ", getEmailAddress()=" + getEmailAddress()
 				+ ", getPhoneNumber()=" + getPhoneNumber() + ", toString()=" + super.toString() + ", getClass()="
 				+ getClass() + ", hashCode()=" + hashCode() + "]";
+	}
+
+	public ClassSchedule getClassSchedule() {
+		return classSchedule;
+	}
+
+	public void setClassSchedule(ClassSchedule classSchedule) {
+		this.classSchedule = classSchedule;
 	}
 
 	
