@@ -46,6 +46,7 @@ public class AdminServiceImpl implements AdminService
 		student.setTenthPercentage(studentModel.getTenthPercentage());
 		student.setCourseName(studentModel.getCourseName());
 		student.setDepartmentName(studentModel.getDepartmentName());
+		studentList.add(student);
 		
 	}
 
@@ -64,7 +65,7 @@ public class AdminServiceImpl implements AdminService
 	{
 		List<Faculty> facultyList = new ArrayList<Faculty>();
 		Faculty faculty = new Faculty();
-		faculty.setFacultyId(facultyModel.getFacultyId());
+		faculty.setFacultyId(faculty.getFacultyId());
 		faculty.setFirstName(facultyModel.getFirstName());
 		faculty.setLastName(facultyModel.getLastName());
 		faculty.setPhoneNumber(facultyModel.getPhoneNumber());
@@ -73,6 +74,7 @@ public class AdminServiceImpl implements AdminService
 		faculty.setCourseName(facultyModel.getCourseName());
 		faculty.setDepartmentName(facultyModel.getDepartmentName());
 		faculty.setSalary(facultyModel.getSalary());
+		facultyList.add(faculty);
 	}
 
 	@Override
